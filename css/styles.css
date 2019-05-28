@@ -50,5 +50,6 @@
 }
 
 #resultImage {
-  width: 60%;
+  float: left;
+  max-width: 50%;
 }

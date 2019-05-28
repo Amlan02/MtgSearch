@@ -17,7 +17,7 @@
     <div class='container'>
 
       <div id='formContainer'>
-        <form id='searchForm' onsubmit="return cardSearch()">
+        <form id='searchForm'>
           <input id='input' type='text' name='input' value='test'></input>
           <button id='submit' type='submit'>Search</button>
         </form>

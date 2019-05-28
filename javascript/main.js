@@ -1,4 +1,6 @@
-function cardSearch() {
+let form = document.getElementById('searchForm');
+
+form.onsubmit = function cardSearch() {
   let input = document.getElementById('input').value;
   let searchQ = "https://api.scryfall.com/cards/search?q=" + input;
   let resultsContainer = document.getElementById('resultsContainer');
@@ -6,8 +8,6 @@ function cardSearch() {
   let request = new XMLHttpRequest();
 
   request.open('GET', searchQ, true)
-
-  request.timeout = 500;
 
   request.onload = function() {
     let answer = JSON.parse(this.response);
@@ -28,7 +28,7 @@ function cardSearch() {
                            <img id='resultImage' src="${cardImage}">`;
 
     } else {
-        console.log('error');
+        console.error(request.statusText);
     }
   }
 
