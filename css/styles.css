@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 90%;
+}
+
+#title {
+  font-size: 2em;
+  margin: 0 auto;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#formContainer {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#input {
+  display: inline-block;
+  margin: 1%;
+  border-radius: 3px;
+}
+
+#buttonWrap {
+  display: inline-block;
+  margin: 1%;
+}
+
+#submit {
+  background-color: grey;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+#resultsContainer {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 500px;
+}

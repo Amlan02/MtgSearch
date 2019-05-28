@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MtgSearch</title>
+    <link rel='Stylesheet' href='css/styles.css'>
+    <script type='text/javascript' src='javascript/main.js'></script>
+  </head>
+
+  <body>
+
+    <div class='header'>
+      <h1 id='title'>MtgSearch</h1>
+    </div>
+
+    <div class='container'>
+
+      <div id='formContainer'>
+        <form id='searchForm' method='POST' onsubmit='mtgSearch(this)'>
+          <div id='input'><input id='input' name='input' placeholder='placeholder..'></div>
+          <div id ='buttonWrap'><button id='submit' name='submit' value='submit'>Search</button></div>
+        </form>
+      </div>
+
+      <div id='resultsContainer'>
+        <div id='textbox'>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
