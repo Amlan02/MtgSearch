@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MtgSearch</title>
     <link rel='Stylesheet' href='css/styles.css'>
-    <script type='text/javascript' src='javascript/main.js'></script>
   </head>
 
   <body>
@@ -18,21 +17,22 @@
     <div class='container'>
 
       <div id='formContainer'>
-        <form id='searchForm' method='POST' onsubmit='mtgSearch(this)'>
-          <div id='input'><input id='input' name='input' placeholder='placeholder..'></div>
-          <div id ='buttonWrap'><button id='submit' name='submit' value='submit'>Search</button></div>
+        <form id='searchForm' onsubmit="return cardSearch()">
+          <input id='input' type='text' name='input' value='test'></input>
+          <button id='submit' type='submit'>Search</button>
         </form>
       </div>
 
       <div id='resultsContainer'>
-        <div id='textbox'>
-        </div>
-        
+        <div id='textbox'></div>
+      </div>
+
 
       </div>
 
     </div>
 
+    <script type='text/javascript' src='javascript/main.js'></script>
   </body>
 
 </html>
