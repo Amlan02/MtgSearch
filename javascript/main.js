@@ -1,4 +1,3 @@
-
 function cardSearch() {
   let input = document.getElementById('input').value;
   let searchQ = "https://api.scryfall.com/cards/search?q=" + input;
@@ -7,6 +6,8 @@ function cardSearch() {
   let request = new XMLHttpRequest();
 
   request.open('GET', searchQ, true)
+
+  request.timeout = 500;
 
   request.onload = function() {
     let answer = JSON.parse(this.response);
