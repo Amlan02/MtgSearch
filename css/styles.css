@@ -49,7 +49,7 @@
   text-align: center;
 }
 
-#resultImage {
+.resultImage {
   float: left;
   max-width: 50%;
 }
