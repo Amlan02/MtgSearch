@@ -43,13 +43,57 @@
 }
 
 #resultsContainer {
-  border: 1px solid black;
-  border-radius: 5px;
-  height: 500px;
+  display: grid;
   text-align: center;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+}
+
+.Item {
+  border: 1px solid black;
+  width: 200px;
+  height: 280px;
+  background-color: grey;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+#gridItem0 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#gridItem1 {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .resultImage {
-  float: left;
-  max-width: 50%;
+  max-width: 100%;
+}
+
+.SresultI {
+  position: relative;
+  z-index: 999;
+  height: 96%;
+  width: 96%;
+  top: -100%;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.info {
+  font-weight: bold;
+  visibility: hidden;
+  height: inherit;
+  width: inherit;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  margin: 0 auto;
+}
+
+.SresultI:hover .info {
+  visibility: visible;
 }
