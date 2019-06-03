@@ -4,10 +4,10 @@ form.onsubmit = function cardSearch() {
   let input = document.getElementById('input').value;
   let searchQ = "https://api.scryfall.com/cards/search?q=" + input;
   let resultsContainer = document.getElementById('resultsContainer');
-  let textbox = document.getElementById('textbox');
+  let resultsC = document.getElementById('resultsContainer');
   let request = new XMLHttpRequest();
 
-  textbox.innerHTML = "";
+  resultsC.innerHTML = "";
 
   request.open('GET', searchQ, true)
 
@@ -23,17 +23,30 @@ form.onsubmit = function cardSearch() {
           (obj && obj[key] !== 'undefined') ? obj[key] : undefined, nestedObj);
       }
 
-    //  const cardImage = getNestedObject(answer, ['data', 0, 'image_uris', 'normal']);
-
       for(i=0; i<`${answer.total_cards}`; i++) {
-        const cardImage = getNestedObject(answer, ['data', i, 'image_uris', 'normal']);
-        textbox.innerHTML += `<img class='resultImage' src="${cardImage}">`;
-      }
-
-      // textbox.innerHTML = `Found ${answer.total_cards} cards.<br>
-      //                      First result: ${answer.data[0].name}<br>
-      //                      <img id='resultImage' src="${cardImage}">`;
-
+        let cardImage = getNestedObject(answer, ['data', i, 'image_uris', 'normal']);
+        console.log(cardImage);
+        if(cardImage == undefined) {
+          cardImage = "./images/notFound.jpg";
+        }
+        const cardName = getNestedObject(answer, ['data', i, 'name']);
+        let cardPrice = "&euro;" + getNestedObject(answer, ['data', i, 'prices', 'eur']) + ",-";
+        if(cardPrice == "&euro;null,-") {
+          cardPrice = 'Price not found';
+        }
+        const gridItem = 'gridItem' + i;
+          resultsC.innerHTML += `<div class='Item' id='${gridItem}'>
+                                <img class='resultImage' src="${cardImage}">
+                                <div class='SresultI'>
+                                  <div class='info'>
+                                    <p class='text'>
+                                      ${cardName}<br>
+                                      ${cardPrice}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>`;
+      };
     } else {
         console.error(request.statusText);
     }
@@ -43,3 +56,5 @@ form.onsubmit = function cardSearch() {
 
   return false;
 }
+
+document.getElementsByClassName('SresultI')
