@@ -43,6 +43,7 @@ form.onsubmit = function cardSearch() {
                                       ${cardName}<br>
                                       ${cardPrice}
                                     </p>
+                                    <div class='add' onclick='add(${cardName})'><p class='plus'>+</p></div>
                                   </div>
                                 </div>
                               </div>`;
@@ -55,6 +56,10 @@ form.onsubmit = function cardSearch() {
   request.send()
 
   return false;
+}
+
+function add(c) {
+ console.log(c);
 }
 
 document.getElementsByClassName('SresultI')
