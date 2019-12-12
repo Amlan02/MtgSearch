@@ -42,10 +42,27 @@
   border-radius: 3px;
 }
 
+.wrapper {
+  width: 70%;
+  height: 800px;
+  display: inline-block;
+  background-color: grey;
+  margin: 5px;
+}
+
+#decklist {
+  background-color: grey;
+  float: right;
+  height: 400px;
+  width: 25%;
+  display: inline-block;
+  margin: 5px;
+}
+
 #resultsContainer {
   display: grid;
   text-align: center;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   grid-column-gap: 2px;
   grid-row-gap: 2px;
 }
