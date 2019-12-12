@@ -94,6 +94,6 @@
   margin: 0 auto;
 }
 
-.SresultI:hover .info {
+.SresultI.hover .info {
   visibility: visible;
 }

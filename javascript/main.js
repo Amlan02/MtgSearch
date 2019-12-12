@@ -29,7 +29,9 @@ form.onsubmit = function cardSearch() {
         if(cardImage == undefined) {
           cardImage = "./images/notFound.jpg";
         }
+
         const cardName = getNestedObject(answer, ['data', i, 'name']);
+
         let cardPrice = "&euro;" + getNestedObject(answer, ['data', i, 'prices', 'eur']) + ",-";
         if(cardPrice == "&euro;null,-") {
           cardPrice = 'Price not found';
