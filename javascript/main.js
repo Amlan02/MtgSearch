@@ -39,13 +39,13 @@ form.onsubmit = function cardSearch() {
         const gridItem = 'gridItem' + i;
           resultsC.innerHTML += `<div class='Item' id='${gridItem}'>
                                 <img class='resultImage' src="${cardImage}">
+                                <button class='add' onclick='add(${cardName})'>+</button>
                                 <div class='SresultI'>
                                   <div class='info'>
                                     <p class='text'>
                                       ${cardName}<br>
                                       ${cardPrice}
                                     </p>
-                                    <div class='add' onclick='add(${cardName})'><p class='plus'>+</p></div>
                                   </div>
                                 </div>
                               </div>`;
@@ -63,5 +63,3 @@ form.onsubmit = function cardSearch() {
 function add(c) {
  console.log(c);
 }
-
-document.getElementsByClassName('SresultI')
