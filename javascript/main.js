@@ -1,5 +1,6 @@
 let form = document.getElementById('searchForm');
 
+//form handler
 form.onsubmit = function cardSearch() {
   let input = document.getElementById('input').value;
   let searchQ = "https://api.scryfall.com/cards/search?q=" + input;
@@ -39,13 +40,13 @@ form.onsubmit = function cardSearch() {
         const gridItem = 'gridItem' + i;
           resultsC.innerHTML += `<div class='Item' id='${gridItem}'>
                                 <img class='resultImage' src="${cardImage}">
-                                <button class='add' onclick='add(${cardName})'>+</button>
                                 <div class='SresultI'>
                                   <div class='info'>
                                     <p class='text'>
                                       ${cardName}<br>
                                       ${cardPrice}
                                     </p>
+                                    <button class='add' onclick='add("${cardName}")'>+</button>
                                   </div>
                                 </div>
                               </div>`;
@@ -55,11 +56,22 @@ form.onsubmit = function cardSearch() {
     }
   }
 
-  request.send()
-
+  request.send();
   return false;
 }
 
+//buttons ClickHandler
+let decklistdiv = document.getElementById('decklist');
+let decklist = [];
+
 function add(c) {
  console.log(c);
+ decklist.push(c);
+ writeDecklist();
+}
+
+function writeDecklist() {
+  for(i=0; i<decklist.length; i++) {
+    decklist.innerHTML += `<div class='deckListCard'>decklist[i]<div>`;
+  }
 }

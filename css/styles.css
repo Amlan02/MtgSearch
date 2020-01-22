@@ -94,9 +94,9 @@
 .SresultI {
   position: relative;
   z-index: 999;
-  height: 28%;
+  height: 44%;
   width: 96%;
-  top: -35%;
+  top: -51%;
   border-radius: 5px;
   margin: 0 auto;
 }
@@ -112,6 +112,8 @@
 }
 
 .add {
+  position: absolute;
+  bottom: 0;
   text-align: center;
   width: 20px;
   height: 20px;
